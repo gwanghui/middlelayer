@@ -10,6 +10,7 @@ sourceCompatibility = '11'
 
 repositories {
     mavenCentral()
+    jcenter()
 }
 
 dependencies {
@@ -17,7 +18,10 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.apache.kafka:kafka-streams'
     implementation 'org.springframework.kafka:spring-kafka'
-//    runtimeOnly 'com.h2database:h2'
+    implementation 'org.springframework.boot:spring-boot-starter-integration'
+    implementation 'org.springframework.integration:spring-integration-mqtt'
+    compile group: 'io.moquette', name: 'moquette-broker', version: '0.13'
+    //    runtimeOnly 'com.h2database:h2'
     compileOnly 'org.projectlombok:lombok'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
@@ -25,6 +29,10 @@ dependencies {
 
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
 
+}
+
+configurations {
+    compile.exclude group: "org.slf4j", module: "slf4j-log4j12"
 }
 
 test {

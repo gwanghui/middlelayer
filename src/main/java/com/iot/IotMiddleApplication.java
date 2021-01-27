@@ -9,5 +9,4 @@ public class IotMiddleApplication {
     public static void main(String[] args) {
         SpringApplication.run(IotMiddleApplication.class, args);
     }
-
 }
