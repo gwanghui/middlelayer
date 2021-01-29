@@ -54,6 +54,7 @@ protobuf {
             grpc {}
         }
     }
+    generatedFilesBaseDir = "$projectDir/src"
 }
 
 sourceSets {
